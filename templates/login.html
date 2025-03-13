@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="static/login.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        <label for="username">Username: </label>
+        <input type="text"
+               id="username"
+               name="username"
+               required >
+        <br><br>
+        <label for="password">Password: </label>
+        <input type="text" name="password" id="password" required>
+        <<br><br><br>
+        <button type="submit">login</button>
+    </form>
+<!--    hiển dữ liệu nếu search_text không rỗng-->
+    <p>
+        {% if search_text %}
+        You searched for: {{search_text}}
+        {{table |safe}}
+        {% endif %}
+    </p>
+</body>
