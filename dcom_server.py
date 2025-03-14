@@ -16,7 +16,7 @@ class DCOMServer:
     _reg_clsid_ = "{F9DABC68-3C3A-4F4D-8B25-65853ABEE832}"
 
     def hello(self):
-        """ Trả về lời chào bằng logging """
+        """ chào người dùng và lưu lại sự kiện gọi đến phương thức chào vào file dcom_server.log """
         user = win32api.GetUserName()
         message = f"Hello, {user}! Welcome to my DCOM Server."
         logging.info(f"Hello method called by {user}")
