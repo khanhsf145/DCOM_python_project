@@ -11,44 +11,55 @@ logging.basicConfig(filename="dcom_server.log", level=logging.INFO,
 sql_db="customer_service.db"
 
 class DCOMServer:
-    _public_methods_ = ['Hello','authenticate','FetchUsers','AddUsers']
+    _public_methods_ = ['hello','fetch_user','add_users','fetch_all_users','fetch_request']
     _reg_progid_ = "DCOM.Server"
     _reg_clsid_ = "{F9DABC68-3C3A-4F4D-8B25-65853ABEE832}"
 
-    def authenticate(self):
+    def hello(self):
+        """ Trả về lời chào bằng logging """
         user = win32api.GetUserName()
-        logging.info(f"Request received from user: {user}")
-        if user.lower() not in ["user"]:
-            logging.warning(f"Unauthorized access attempt by {user}")
-            # raise Exception("Access Denied: Unauthorized user.")
-        return user
+        message = f"Hello, {user}! Welcome to my DCOM Server."
+        logging.info(f"Hello method called by {user}")
+        return message
     def __init__(self):
         """ Khởi tạo kết nối database """
         self.conn = sqlite3.connect(sql_db, check_same_thread=False)
         self.cur = self.conn.cursor()
-    def FetchUsers(self):
+    def fetch_all_users(self, _id):
         logging.info("FetchUsers method called")
         cur=self.cur
         try:
-            sql_command="SELECT id, name FROM Users"
+            sql_command="SELECT id, name FROM Users "
             cur.execute(sql_command)
             users = cur.fetchall()
-            print(str(users))
             return str(users)
         except Exception as e:
             logging.error(f"Database error: {str(e)}")
             return f"Error: {str(e)}"
-    def AddUsers(self):
+    def fetch_user(self, _id):
+        logging.info("fetch_user method called")
+        cur=self.cur
+        try:
+            sql_command=f"SELECT id, name FROM Users where id={_id}"
+            cur.execute(sql_command)
+            user = cur.fetchone()
+            return str(user)
+        except Exception as e:
+            logging.error(f"Database error: {str(e)}")
+            return f"Error: {str(e)}"
+    def fetch_request(self, _id):
+        logging.info("fetch_requests method called")
+        cur=self.cur
+        try:
+            sql_command=f"SELECT id,type,detail FROM Requests"
+            cur.execute(sql_command)
+            request = cur.fetchone()
+            return str(request)
+        except Exception as e:
+            logging.error(f"Database error: {str(e)}")
+            return f"Error: {str(e)}"
+    def add_users(self):
         return 0
-
-    def Hello(self):
-        """ Return a greeting with logging """
-        # user = win32api.GetUserName()
-        user = self.authenticate()
-        message = f"Hello, {user}! Welcome to the my DCOM Server."
-        # logging.info(f"Hello method called by {user}")
-        # message = f"Hello, abc! Welcome to the my DCOM Server. "
-        return message
 
 
 
