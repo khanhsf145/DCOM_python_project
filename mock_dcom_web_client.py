@@ -1,21 +1,21 @@
-import win32com.client
 import flask
 from flask import Flask, render_template, request, session, redirect, url_for, flash, jsonify
 import sqlite3
 import os
 import logging
+import sys
+
+# Import từ mock_dcom_server thay vì sử dụng win32com.client
+try:
+    from mock_dcom_server import server_instance as dcom_obj
+    print("Sử dụng mock DCOM server thành công!")
+except ImportError as e:
+    print(f"Lỗi khi import mock_dcom_server: {str(e)}")
+    sys.exit(1)
 
 # Thiết lập logging
-logging.basicConfig(filename="dcom_web_client.log", level=logging.INFO, 
+logging.basicConfig(filename="mock_dcom_web_client.log", level=logging.INFO, 
                    format="%(asctime)s - %(levelname)s - %(message)s")
-
-# Khởi tạo kết nối với DCOM server
-try:
-    dcom_obj = win32com.client.Dispatch("DCOM.Server")
-    logging.info("Kết nối thành công đến DCOM.Server")
-except Exception as e:
-    logging.error(f"Lỗi kết nối đến DCOM.Server: {str(e)}")
-    dcom_obj = None
 
 # Khởi tạo Flask app
 app = Flask(__name__)
@@ -167,16 +167,12 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 if __name__ == '__main__':
-    # Tạo thư mục templates nếu chưa tồn tại
+    # Kiểm tra các templates đã tồn tại
     if not os.path.exists('templates'):
-        os.makedirs('templates')
-    
-    # Tạo các template cơ bản nếu chưa tồn tại
-    template_files = ['index.html', 'users.html', 'user_detail.html', 'requests.html', '404.html', '500.html']
-    for template in template_files:
-        if not os.path.exists(f'templates/{template}'):
-            with open(f'templates/{template}', 'w', encoding='utf-8') as f:
-                f.write(f'<!-- {template} -->\n<!DOCTYPE html>\n<html>\n<head>\n  <title>DCOM Web Client</title>\n</head>\n<body>\n  <h1>DCOM Web Client</h1>\n  <p>This is a placeholder for {template}</p>\n</body>\n</html>')
-    
+        print("Thư mục templates không tồn tại. Vui lòng chạy dcom_web_client.py trước để tạo templates.")
+        sys.exit(1)
+        
+    print("Mock DCOM Web Client đang khởi động...")
+    print("Giao diện web sẽ có sẵn tại http://127.0.0.1:5000/")
     # Chạy ứng dụng Flask
-    app.run(debug=True)
+    app.run(debug=True) 

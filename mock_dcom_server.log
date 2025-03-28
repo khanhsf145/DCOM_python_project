@@ -1,0 +1,49 @@
+2025-03-20 18:23:18,789 - INFO - K\u1ebft n\u1ed1i database thành công
+2025-03-20 18:23:18,791 - INFO - Hello method called by khanh
+2025-03-20 18:23:18,791 - INFO - FetchUsers method called
+2025-03-20 18:23:18,791 - INFO - fetch_user method called with id=1
+2025-03-20 18:23:18,792 - INFO - fetch_requests method called
+2025-03-20 18:24:20,268 - INFO - K\u1ebft n\u1ed1i database thành công
+2025-03-20 18:24:20,315 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-20 18:24:20,315 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-20 18:24:20,317 - INFO -  * Restarting with stat
+2025-03-20 18:24:20,651 - INFO - K\u1ebft n\u1ed1i database thành công
+2025-03-20 18:24:20,679 - WARNING -  * Debugger is active!
+2025-03-20 18:24:20,683 - INFO -  * Debugger PIN: 141-098-991
+2025-03-20 18:26:04,475 - INFO -  * Detected change in 'C:\\Users\\khanh\\OneDrive\\Ta\u0300i liê\u0323u\\GitHub\\DCOM_python_project\\mock_dcom_web_client.py', reloading
+2025-03-20 18:26:04,531 - INFO -  * Restarting with stat
+2025-03-20 18:26:04,866 - INFO - K\u1ebft n\u1ed1i database thành công
+2025-03-20 18:26:04,891 - WARNING -  * Debugger is active!
+2025-03-20 18:26:04,895 - INFO -  * Debugger PIN: 141-098-991
+2025-03-20 18:26:12,987 - INFO - Hello method called by khanh
+2025-03-20 18:26:12,987 - INFO - Nh\u1eadn \u0111\u01b0\u1ee3c thông \u0111i\u1ec7p t\u1eeb DCOM server: Hello, khanh! Welcome to my DCOM Server (Mock Version).
+2025-03-20 18:26:13,002 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:13] "GET / HTTP/1.1" 200 -
+2025-03-20 18:26:45,169 - INFO - FetchUsers method called
+2025-03-20 18:26:45,169 - INFO - L\u1ea5y danh sách 5 ng\u01b0\u1eddi dùng t\u1eeb DCOM server
+2025-03-20 18:26:45,183 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:45] "GET /users HTTP/1.1" 200 -
+2025-03-20 18:26:46,582 - INFO - fetch_requests method called
+2025-03-20 18:26:46,598 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:46] "GET /requests HTTP/1.1" 200 -
+2025-03-20 18:26:47,463 - INFO - FetchUsers method called
+2025-03-20 18:26:47,463 - INFO - L\u1ea5y danh sách 5 ng\u01b0\u1eddi dùng t\u1eeb DCOM server
+2025-03-20 18:26:47,465 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:47] "GET /users HTTP/1.1" 200 -
+2025-03-20 18:26:48,591 - INFO - fetch_user method called with id=1
+2025-03-20 18:26:48,596 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:48] "GET /users/1 HTTP/1.1" 200 -
+2025-03-20 18:26:52,723 - INFO - FetchUsers method called
+2025-03-20 18:26:52,724 - INFO - L\u1ea5y danh sách 5 ng\u01b0\u1eddi dùng t\u1eeb DCOM server
+2025-03-20 18:26:52,725 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:52] "GET /users HTTP/1.1" 200 -
+2025-03-20 18:26:53,807 - INFO - Hello method called by khanh
+2025-03-20 18:26:53,807 - INFO - Nh\u1eadn \u0111\u01b0\u1ee3c thông \u0111i\u1ec7p t\u1eeb DCOM server: Hello, khanh! Welcome to my DCOM Server (Mock Version).
+2025-03-20 18:26:53,808 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:53] "GET / HTTP/1.1" 200 -
+2025-03-20 18:26:56,123 - INFO - fetch_requests method called
+2025-03-20 18:26:56,124 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:56] "GET /requests HTTP/1.1" 200 -
+2025-03-20 18:26:57,763 - INFO - Hello method called by khanh
+2025-03-20 18:26:57,764 - INFO - Nh\u1eadn \u0111\u01b0\u1ee3c thông \u0111i\u1ec7p t\u1eeb DCOM server: Hello, khanh! Welcome to my DCOM Server (Mock Version).
+2025-03-20 18:26:57,765 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:57] "GET / HTTP/1.1" 200 -
+2025-03-20 18:26:58,309 - INFO - Hello method called by khanh
+2025-03-20 18:26:58,310 - INFO - Nh\u1eadn \u0111\u01b0\u1ee3c thông \u0111i\u1ec7p t\u1eeb DCOM server: Hello, khanh! Welcome to my DCOM Server (Mock Version).
+2025-03-20 18:26:58,311 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:58] "GET / HTTP/1.1" 200 -
+2025-03-20 18:26:59,197 - INFO - Hello method called by khanh
+2025-03-20 18:26:59,197 - INFO - 127.0.0.1 - - [20/Mar/2025 18:26:59] "GET /api/status HTTP/1.1" 200 -
+2025-03-20 18:27:43,198 - INFO - fetch_requests method called
+2025-03-20 18:27:43,200 - INFO - 127.0.0.1 - - [20/Mar/2025 18:27:43] "GET /requests HTTP/1.1" 200 -
